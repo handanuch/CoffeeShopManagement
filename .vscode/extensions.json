@@ -1,7 +1,12 @@
+
 {
   "recommendations": [
-    "ms-dotnettools.csharp",
+    "Codeium.codeium",
     "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "ms-dotnettools.csharp",
+    "PKief.material-icon-theme",
     "Vue.volar"
   ]
 }
+
