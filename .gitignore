@@ -2,5 +2,5 @@ webapi/bin
 webapi/obj
 webui/node_modules
 webui/dist
-webapi/.env
+*.env
 *.sln
