@@ -1,0 +1,12 @@
+{
+  "en": {
+    "rule": "Rule",
+    "rule_level": "Rule Level",
+    "next_level": "Next Level"
+  },
+  "km": {
+    "rule": "ច្បាប់",
+    "rule_level": "កម្រិតច្បាប់",
+    "next_level": "កម្រិត​បន្ទាប់"
+  }
+}

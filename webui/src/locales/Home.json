@@ -1,0 +1,14 @@
+{
+  "en": {
+    "profile": "Profile",
+    "lock_screen": "Lock screen",
+    "logout": "Logout",
+    "menu": "MENU"
+  },
+  "km": {
+    "profile": "ព័ត៌មានផ្ទាល់ខ្លួន",
+    "lock_screen": "ចាក់សោរអេក្រង់",
+    "logout": "ចេញគណនី",
+    "menu": "ម៉ឺនុយ"
+  }
+}

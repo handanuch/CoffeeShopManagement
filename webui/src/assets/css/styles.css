@@ -1,3 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Moul&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Moul&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Moul&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root,
+[data-bs-theme="light"] {
+  --bs-secondary-body-bg: #eff2f7;
+}
+[data-bs-theme="dark"] {
+  --bs-secondary-body-bg: #556ee640;
+}
+
+.font-khmer-moul {
+  font-family: "Moul", serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+.battambang-thin {
+  font-family: "Battambang", "Tinos";
+  font-weight: 100;
+  font-style: normal;
+}
+
+.battambang-light {
+  font-family: "Battambang", "Tinos";
+  font-weight: 300;
+  font-style: normal;
+}
+
+.battambang-regular {
+  font-family: "Battambang", "Tinos";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.battambang-bold {
+  font-family: "Battambang", "Tinos";
+  font-weight: 700;
+  font-style: normal;
+}
+
+.battambang-black {
+  font-family: "Battambang", "Tinos";
+  font-weight: 900;
+  font-style: normal;
+}
+.tinos-regular {
+  font-family: "Tinos", "Battambang";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tinos-bold {
+  font-family: "Tinos", "Battambang";
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tinos-regular-italic {
+  font-family: "Tinos", "Battambang";
+  font-weight: 400;
+  font-style: italic;
+}
+
+.tinos-bold-italic {
+  font-family: "Tinos", "Battambang";
+  font-weight: 700;
+  font-style: italic;
+}
+.koh-santepheap-thin {
+  font-family: "Koh Santepheap", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.koh-santepheap-light {
+  font-family: "Koh Santepheap", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.koh-santepheap-regular {
+  font-family: "Koh Santepheap", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.koh-santepheap-bold {
+  font-family: "Koh Santepheap", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.koh-santepheap-black {
+  font-family: "Koh Santepheap", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 .red {
   color: #f00;
 }
@@ -96,7 +195,7 @@ tbody > tr.red > * {
 }
 .body-form {
   overflow-x: hidden;
-  height: calc(100vh - 155px) !important;
+  height: calc(100vh) !important;
   max-width: 100%;
   /* >>>>>>> 8b25c79 (Css: Scroll (Input form and Table)) */
 }
@@ -119,6 +218,7 @@ tbody > tr.red > * {
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
   background-color: #f5f5f5;
 }
 
@@ -126,6 +226,12 @@ tbody > tr.red > * {
   border-radius: 5px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #7f8387;
+}
+
+.cuztom-scroll-bar::-webkit-scrollbar {
+  width: 9px;
+  height: 9px !important;
+  background-color: #f5f5f5;
 }
 
 .SLI {
@@ -150,9 +256,9 @@ tbody > tr.red > * {
   position: absolute;
   z-index: 2;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 0 0 0.25rem 0.25rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
 }
 .SLI > i.bx {
   position: absolute;
@@ -171,6 +277,7 @@ tbody > tr.red > * {
 }
 .SLI > div > ul > li {
   padding: 5px;
+  cursor: pointer;
 }
 .SLI > div > ul > li:hover {
   background: #f4f3f3;
@@ -187,4 +294,165 @@ tbody > tr.red > * {
 }
 .pdl-60 {
   padding-left: 60px !important;
+}
+.container-report {
+  height: calc(100vh - 130px);
+  overflow: scroll;
+}
+.menu-report {
+  position: sticky;
+  border-radius: 4px;
+  top: 0;
+  z-index: 2;
+  background: rgba(240, 248, 255, 255);
+  color: azure;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 10%), 0 9.5px 12px -3px rgba(0, 0, 0, 0.084),
+    0 19.5px 30.5px 0 rgb(0 0 0 / 0%), 0 7px 40px 0 rgb(0 0 0 / 0%);
+}
+.menu-report > .btn,
+.menu-report .btn i,
+.menu-report div {
+  color: #3154a4 !important;
+}
+.menu-report > input,
+.menu-report > input:focus,
+.menu-report > input:focus-visible {
+  border: 0 !important;
+
+  outline: 0 !important;
+}
+.report-btn {
+  border: 0 !important;
+}
+.justify-content-center > select {
+  border: 0 !important;
+  outline: 0 !important;
+}
+.report-btn:disabled {
+  border: 0 !important;
+  outline: 0 !important;
+}
+.current-page {
+  text-align: center;
+}
+.report-view > canvas {
+  display: flex !important;
+  justify-content: center !important;
+  border: 1px #d3d3d3 solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 75%) !important;
+}
+.card-bg-secondary {
+  background-color: var(--bs-secondary-body-bg) !important;
+}
+.profile-user-wid {
+  margin-top: -60px;
+}
+.avatar-md {
+  width: 10.5rem;
+  height: 10.5rem;
+}
+.right-bar-enabled .right-bar {
+  right: 0 !important;
+  width: 350px !important;
+}
+.right-bar {
+  right: -350px !important;
+}
+.rightbar-dev {
+  background-color: var(--bs-body-bg);
+}
+.v3dp__popout[data-v-65eb861b] {
+  position: fixed !important;
+  z-index: 9999;
+}
+/* Loading */
+.loader-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 100px;
+  padding: 16px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #0339fa;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+/* name fade in and out */
+.slide-fade-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+.label {
+  margin-top: 0.5rem;
+  margin-bottom: 0rem !important;
+}
+.toast-dev {
+  position: absolute !important;
+  z-index: 9999 !important;
+  right: 0.5rem !important;
+  top: 2.5rem !important;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.report-content-filter > .modal-header {
+  padding: 0.5rem 1rem 0.5rem 1rem !important;
+}
+.bg-selected {
+  position: sticky;
+  z-index: 5;
+  top: 30px;
+  bottom: 0;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 10%), 0 9.5px 12px -3px rgba(0, 0, 0, 0.084),
+    0 19.5px 30.5px 0 rgb(0 0 0 / 0%), 0 7px 40px 0 rgb(0 0 0 / 0%) !important;
+}
+.report-content-filter > .modal-body > .table .tbody .tr:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 10%), 0 9.5px 12px -3px rgba(0, 0, 0, 0.084),
+    0 19.5px 30.5px 0 rgb(0 0 0 / 0%), 0 7px 40px 0 rgb(0 0 0 / 0%) !important;
+}
+.report-content-filter .table-scroll {
+  height: calc(120vh - 420px) !important;
+  overflow: auto !important;
+}
+.report-content-filter > .modal-body {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.leafletMap {
+  height: 400px;
+}
+.row-selected > td {
+  background: #c8eceb;
 }

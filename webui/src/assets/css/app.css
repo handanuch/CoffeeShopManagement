@@ -4,7 +4,7 @@
   right: 0;
   left: 0;
   z-index: 1002;
-  background: var(--bs-header-bg);
+  background-color: var(--bs-header-bg);
   -webkit-box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
   box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
 }
@@ -23,8 +23,7 @@
   padding: 0 calc(24px * 0.5) 0 0;
 }
 .navbar-header .dropdown .show.header-item {
-  background-color: var(--bs-header-bg);
-  color: var(--bs-header-item-hover-color);
+  background-color: var(--bs-tertiary-bg);
 }
 .navbar-brand-box {
   padding: 0 1.5rem;
@@ -84,16 +83,15 @@
   padding: calc(70px + 24px) calc(24px * 0.75) 60px calc(24px * 0.75);
 }
 .header-item {
-  height: 40px;
+  height: 70px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   color: var(--bs-header-item-color);
   border: 0;
   border-radius: 0;
 }
-.header-item:hover,
-.header-item:hover i {
-  color: var(--bs-header-item-hover-color);
+.header-item:hover {
+  color: var(--bs-header-item-color);
 }
 .header-profile-user {
   height: 36px;
@@ -319,15 +317,6 @@ body[data-layout="horizontal"] .footer {
 .metismenu .mm-collapse:not(.mm-show) {
   display: none;
 }
-.mm-collapse,
-.mm-collapsed {
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 0.35s;
-  transition-duration: 0.35s;
-  -webkit-transition-property: height, visibility;
-  transition-property: height, visibility;
-}
 .metismenu .mm-collapse.mm-show {
   display: block;
 }
@@ -350,14 +339,11 @@ body[data-layout="horizontal"] .footer {
   margin-top: 0;
   position: fixed;
   top: 70px;
-  border-radius: 0 15px 15px 0;
-  /* -webkit-box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03); */
-  /* box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03); */
-  -webkit-box-shadow: -1px 0px 8px -2px rgba(75, 95, 96, 0.92);
-  box-shadow: -1px 0px 8px -2px rgba(75, 95, 96, 0.92);
+  -webkit-box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+  box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
 }
 .main-content {
-  margin-left: 255px;
+  margin-left: 250px;
   overflow: hidden;
 }
 .main-content .content {
@@ -365,7 +351,7 @@ body[data-layout="horizontal"] .footer {
   margin-top: 70px;
 }
 #sidebar-menu {
-  padding: 0px 0 30px 0;
+  padding: 10px 0 30px 0;
 }
 #sidebar-menu .mm-active > .has-arrow:after {
   -webkit-transform: rotate(-180deg);
@@ -384,13 +370,12 @@ body[data-layout="horizontal"] .footer {
 }
 #sidebar-menu ul li a {
   display: block;
-  padding: 0.2rem 0.6rem;
+  padding: 0.625rem 1.5rem;
   color: #545a6d;
   position: relative;
-  font-size: var(--bs-body-font-size);
+  font-size: 13px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  text-wrap: nowrap;
 }
 #sidebar-menu ul li a i {
   display: inline-block;
@@ -435,11 +420,10 @@ body[data-layout="horizontal"] .footer {
   letter-spacing: 0.05em;
   pointer-events: none;
   cursor: default;
-  font-size: 15px;
+  font-size: 11px;
   text-transform: uppercase;
   color: #7f8387;
   font-weight: 600;
-  text-align: center;
 }
 .mm-active {
   color: #556ee6 !important;
@@ -1705,7 +1689,7 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
   content: "\f012c";
   font-family: "Material Design Icons";
   top: -4px !important;
-  left: inherit;
+  left: 1px;
   font-size: 16px;
   color: var(--bs-body-color);
 }

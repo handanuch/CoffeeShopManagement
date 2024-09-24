@@ -1,0 +1,12 @@
+{
+  "en": {
+    "reset_pwd": "Reset User Password",
+    "user_name": "User Name",
+    "default_pwd": "Default Password"
+  },
+  "km": {
+    "reset_pwd": "កំណត់ពាក្យសម្ងាត់អ្នកប្រើ",
+    "user_name": "ឈ្មោះ​អ្នកប្រើប្រាស់",
+    "default_pwd": "ពាក្យសម្ងាត់លំនាំដើម"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "en": {
+    "welcome": "Welcome",
+    "sign_into_your_account": "Sign into your account",
+    "username": "User Name",
+    "password": "Password",
+    "remember_me": "Remember me",
+    "login": "Login",
+    "access": "Access",
+    "credential": "Credential",
+    "caps_lock": "Caps Lock is on",
+    "developed_by": "Developed by",
+    "invalid_user_password": "Invalid User Name or Password",
+    "invalid": "Invalid {0}",
+    "show_password": "Show Password"
+  },
+  "km": {
+    "welcome": "សូមស្វាគមន៍",
+    "sign_into_your_account": "ចូលទៅកាន់គណនីរបស់អ្នក",
+    "username": "ឈ្មោះអ្នកប្រើ",
+    "password": "ពាក្យសម្ងាត់",
+    "remember_me": "ចងចាំខ្ញុំ",
+    "login": "ចូលគណនី",
+    "access": "ចូល",
+    "credential": "លិខិតសម្គាល់",
+    "caps_lock": "Caps Lock បានបើក",
+    "developed_by": "បង្កើតឡើងដោយ",
+    "invalid_user_password": "ឈ្មោះអ្នកប្រើឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ",
+    "invalid": "{0}មិនត្រឹមត្រូវទេ",
+    "show_password": "Show Password"
+  }
+}

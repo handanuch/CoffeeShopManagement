@@ -1,0 +1,25 @@
+{
+  "en": {
+    "seq_mgt": "Sequences Management",
+    "schema": "Schema",
+    "sqmg_name": "Sequence Name",
+    "full_name": "Sequence Full Name",
+    "table_name": "Table Name",
+    "field_name": "Field Name",
+    "confirm_reset": "Do you want to reset data?",
+    "success_reset": "Successful reset data",
+    "reset": "Reset"
+  },
+  "km": {
+    "seq_mgt": "ការគ្រប់គ្រង Sequence",
+    "schema": "Schema",
+    "sqmg_name": "ឈ្មោះ Sequence",
+    "full_name": "ឈ្មោះពេញ",
+    "table_name": "ឈ្មោះ Table",
+    "field_name": "ឈ្មោះ Field",
+    "confirm_reset": "តើអ្នកពិតជាចង់កំណត់ទិន្នន័យឡើងវិញមែនទេ?",
+    "success_reset": "ទិន្នន័យបានកំណត់ឡើងវិញដោយជោគជ័យ",
+    "reset": "កំណត់ទិន្នន័យឡើងវិញ"
+
+  }
+}
