@@ -76,10 +76,10 @@ const loadMenu = () => {
       IMG: "bx bx-grid-alt",
     },
     {
-      PMS_CODE: "wfmCreateUser",
-      PMS_NAME_ENG: "Create User",
-      PMS_NAME_LOCAL: "Create User",
-      PMS_FORM_NAME: "CreateUser",
+      PMS_CODE: "wfmEmployee",
+      PMS_NAME_ENG: "Employee",
+      PMS_NAME_LOCAL: "Employee",
+      PMS_FORM_NAME: "Employee",
       IMG: "bx bx-user-plus",
     },
     {
