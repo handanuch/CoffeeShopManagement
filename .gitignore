@@ -2,4 +2,6 @@ webapi/bin
 webapi/obj
 webui/node_modules
 webui/dist
+*.env
+*.sqlite3
 *.sln

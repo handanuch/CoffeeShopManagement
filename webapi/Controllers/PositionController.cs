@@ -9,10 +9,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoffeeShop.Controllers;
 
-public class DepartmentController : BaseController
+public class PositionController : BaseController
 {
     [HttpPost, Route("viewdata"), PMS(P_TYPE.P_VIEW_DATA)]
-    public IActionResult ViewData(DEPARTMENT dto)
+    public IActionResult ViewData(POSICTION dto)
     {
         try
         {
@@ -21,7 +21,7 @@ public class DepartmentController : BaseController
                 var param = new DynamicParameters();
                 param.Add("FILTER", dto.FILTER);
 
-                var query = db.Query("COM.VW_DEPARTMENT", param, commandType: CommandType.StoredProcedure);
+                var query = db.Query("COM.VW_POSICTION", param, commandType: CommandType.StoredProcedure);
                 return Ok(query);
             }
         }
@@ -31,15 +31,15 @@ public class DepartmentController : BaseController
         }
     }
     [HttpPost, Route("getdata"), PMS(P_TYPE.P_VIEW_DATA)]
-    public IActionResult getData(DEPARTMENT dto){
+    public IActionResult getData(POSICTION dto){
         try
         {
             using (var db = new SqlConnection(G.DBC(HttpContext)))
             {
                 var param = new DynamicParameters();
-                param.Add("DEP_ID", dto.DEP_ID);
+                param.Add("POS_ID", dto.POS_ID);
                 
-                var query = db.Query("COM.GET_DEPRTMENT", param, commandType: CommandType.StoredProcedure).ToList();
+                var query = db.Query("COM.GET_POSICTION", param, commandType: CommandType.StoredProcedure).ToList();
                 if (query.Count > 0) return Ok(query[0]);
                 return Status418(new { locale = "data_not_found" });
             }
@@ -50,7 +50,7 @@ public class DepartmentController : BaseController
         }
     }
     [HttpPost, Route("save"), PMS(P_TYPE.P_VIEW_DATA)]
-    public IActionResult Save(DEPARTMENT dto)
+    public IActionResult Save(POSICTION dto)
     {
         try
         {
@@ -58,16 +58,16 @@ public class DepartmentController : BaseController
             using (var db = new SqlConnection(G.DBC(HttpContext)))
             {
                 var param = new DynamicParameters();
-                param.Add("DEP_ID", dto.DEP_ID);
+                param.Add("POS_ID", dto.POS_ID);
                 param.Add("COM_ID", dto.COM_ID);
-                param.Add("DEP_NO", dto.DEP_NO);
-                param.Add("DEP_CODE", dto.DEP_CODE);
-                param.Add("DEP_NAME_LOCAL", dto.DEP_NAME_LOCAL);
-                param.Add("DEP_NAME_ENG", dto.DEP_NAME_ENG);
+                param.Add("POS_NO", dto.POS_NO);
+                param.Add("POS_CODE", dto.POS_CODE);
+                param.Add("POS_NAME_LOCAL", dto.POS_NAME_LOCAL);
+                param.Add("POS_NAME_ENG", dto.POS_NAME_ENG);
                
                 param.Add("US_NAME", dto.TR_US);
 
-                var query = db.Query("COM.SV_DEPARTMENT_SAVE", param, commandType: CommandType.StoredProcedure);
+                var query = db.Query("COM.SV_POSITION_SAVE", param, commandType: CommandType.StoredProcedure);
                 return Ok(query);
             }
         }

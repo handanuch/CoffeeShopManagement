@@ -39,8 +39,6 @@
             <th>{{ t("code") }}</th>
             <th>{{ t("name_kh") }}</th>
             <th>{{ t("name_en") }}</th>
-            <th>{{ t("created_by") }}</th>
-            <th>{{ t("modify_by") }}</th>
             <th>{{ t("action") }}</th>
           </tr>
         </thead>
@@ -50,8 +48,6 @@
             <th @click="historyData(x)">{{ x.POS_CODE }}</th>
             <td>{{ x.POS_NAME_LOCAL }}</td>
             <td>{{ x.POS_NAME_ENG }}</td>
-            <td><TwoCells :first="x.TR_DISPLAY_NAME" :second="TR_DATE" /></td>
-            <td><TwoCells :first="x.LTR_DISPLAY_NAME" :second="LTR_DATE" /></td>
             <td>
               <ActionCells
                 @view="detailData(x)"
@@ -115,41 +111,7 @@
         </Button>
       </VInput>
     </div>
-    <div v-show="$view == View.HISTORY">
-      <table class="table table-responsive">
-        <thead class="table-light">
-          <tr>
-            <th>{{ t("s_no") }}</th>
-            <th>{{ t("trx_code") }}</th>
-            <th>{{ t("trx_type") }}</th>
-            <th>{{ t("description") }}</th>
-            <th>{{ t("user") }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(x, i) in datahistory" :key="x.POSTM_ID">
-            <td>{{ i + 1 }}</td>
-            <td>{{ x.POSTM_CODE }}</td>
-            <td>{{ x.POSTM_CODE }}</td>
-            <td>{{ x.POSTM_CODE }}</td>
-            <td>{{ x.POSTM_CODE }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="row mb-2">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-8">
-          <div class="text-sm-end">
-            <Button
-              @click="$view = View.DATA"
-              class="btn btn-outline-danger mb-2 me-2"
-              icon="fas fa-times"
-              >{{ t("cancel") }}</Button
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </WideDiv>
 </template>
 
@@ -169,6 +131,7 @@ const dto = reactive({
   POS_NAME_LOCAL: "",
   POS_NAME_ENG: "",
   FILTER: "",
+  TR_US: 1,
   PMS_CODE: "wfmPosition",
 });
 
@@ -195,9 +158,9 @@ const clearData = () => {
 };
 
 const viewData = () => {
-  // $api.post("/api/position/viewdata", dto, (data) => {
-  //   datalist.value = data;
-  // });
+  $api.post("/api/position/viewdata", dto, (data) => {
+    datalist.value = data;
+  });
 };
 
 const verifyData = () => {
