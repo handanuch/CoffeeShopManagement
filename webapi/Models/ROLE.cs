@@ -6,6 +6,8 @@ public class ROLE : BaseModel
 {
     public decimal COM_ID { get; set; }
     public decimal ROL_ID {get; set;}
+    public decimal UR_ID {get; set;}
+    
     public decimal ROL_NO  {get; set;}
     public decimal EMP_ID {get; set;}
     public string? ROL_CODE {get; set;}

@@ -456,3 +456,53 @@ tbody > tr.red > * {
 .row-selected > td {
   background: #c8eceb;
 }
+.select3 {
+  position: relative;
+  width: 100%;
+}
+.select3 > button {
+  text-align: left;
+}
+.select3 li {
+  list-style: none;
+}
+.select3 li > img {
+  width: 12px;
+  margin: 3px;
+}
+.select3 li > span {
+  margin-left: 3px;
+}
+.select3 > div {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  background: #fff;
+  border-radius: 0 0 0.25rem 0.25rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
+}
+.select3 > i.bx {
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  padding: 7px;
+  right: 0px;
+  font-size: 21px;
+  cursor: pointer;
+}
+.select3 > div > ul {
+  padding-top: 3px;
+  padding-left: 0;
+  max-height: 350px;
+  overflow: auto;
+}
+.select3 > div > ul > li {
+  padding: 5px;
+  cursor: pointer;
+}
+.select3 > div > ul > li:hover {
+  background: #f4f3f3;
+  color: rgba(10, 119, 213, 1);
+}
+

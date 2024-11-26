@@ -117,6 +117,13 @@ const loadMenu = () => {
       IMG: "bx bx-user-plus",
     },
     {
+      PMS_CODE: "wfmUserAsign",
+      PMS_NAME_ENG: "UserAsign",
+      PMS_NAME_LOCAL: "UserAsign",
+      PMS_FORM_NAME: "UserAsign",
+      IMG: "bx bx-user-plus",
+    },
+    {
       PMS_CODE: "wfmReport",
       PMS_NAME_ENG: "Report",
       PMS_NAME_LOCAL: "Report",

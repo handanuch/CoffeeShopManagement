@@ -12,6 +12,7 @@ import WideDivTitle from "@/components/WideDivTitle.vue";
 import VInput from "@/components/VInput.vue";
 import TwoCells from "@/components/TwoCells.vue";
 import ActionCells from "@/components/ActionCells.vue";
+import XSelectList from "@/components/XSelectList.vue";
 
 $usr.apply();
 
@@ -36,6 +37,7 @@ app.component("WideDiv", WideDiv);
 app.component("WideDivTitle", WideDivTitle);
 app.component("TwoCells", TwoCells);
 app.component("ActionCells", ActionCells);
+app.component("XSelectList",XSelectList);
 app.mount("#app");
 
 import "@/assets/js/bootstrap.bundle";

@@ -36,16 +36,16 @@
         <thead class="table-light">
           <tr>
             <th>{{ t("s_no") }}</th>
-            <th>{{ t("code") }}</th>
+            <th>{{ t("user") }}</th>
             <th>{{ t("name_kh") }}</th>
             <th>{{ t("name_en") }}</th>
             <th>{{ t("action") }}</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(x, i) in datalist" :key="x.ROL_ID">
-            <td>{{ x.ROL_NO }}</td>
-            <th>{{ x.ROL_CODE }}</th>
+          <tr v-for="(x, i) in datalist" :key="x.UR_ID">
+            <td>{{ i+ 1 }}</td>
+            <th>{{ x.DISPLAY_NAME }}</th>
             <td>{{ x.ROL_NAME_KH }}</td>
             <td>{{ x.ROL_NAME_EN }}</td>
             <td>
@@ -60,45 +60,24 @@
       </table>
     </div>
     <div v-show="$view == View.FORM">
-      <VInput :label="t('s_no')" :rq="true">
-        <input
-          v-model="dto.ROL_NO"
-          type="number"
-          class="form-control"
-          :disabled="$disable"
-        />
+      <VInput :label="t('user')" :rq="true">
+        <XSelectList
+              v-model="USER"
+              rest="/api/user/viewdata"
+              fields="USER_NAME,DISPLAY_NAME"
+              :nullable="true"
+              :autoselect="true"
+            />
       </VInput>
-      <VInput :label="t('code')" :rq="true">
-        <input
-          v-model="dto.ROL_CODE"
-          type="text"
-          class="form-control"
-          :disabled="$disable"
-        />
-      </VInput>
-      <VInput :label="t('name_kh')" :rq="true">
-        <input
-          v-model="dto.ROL_NAME_KH"
-          type="text"
-          class="form-control"
-          :disabled="$disable"
-        />
-      </VInput>
-      <VInput :label="t('name_en')" :rq="true">
-        <input
-          v-model="dto.ROL_NAME_EN"
-          type="text"
-          class="form-control"
-          :disabled="$disable"
-        />
-      </VInput>
-      <VInput :label="t('level')" :rq="true">
-        <input
-          v-model="dto.ROL_LEVEL"
-          type="number"
-          class="form-control"
-          :disabled="$disable"
-        />
+      <VInput :label="t('role')" :rq="true">
+        <XSelectList
+              v-model="ROLE"
+              rest="/api/role/viewdata"
+              fields="ROL_CODE,ROL_NAME_EN"
+              :nullable="true"
+              :autoselect="true"
+            />
+       
       </VInput>
       
 
@@ -133,7 +112,8 @@ import lang from "@/locales/Position.json";
 
 const { t } = useI18n({ messages: lang });
 const dto = reactive({
-  ROL_ID: -1,
+  UR_ID: -1,
+  US_ID:-1,
   ROL_NO: 0,
   NEXT_LEVEL: 0,
   ROL_CODE: "",
@@ -142,14 +122,14 @@ const dto = reactive({
   ROL_LEVEL:0,
   FILTER: "",
   TR_US: 1,
-  PMS_CODE: "wfmRole",
+  PMS_CODE: "wfmUserAsign",
 });
 
 const $view = ref(View.DATA);
 const $disable = ref(false);
 const $label = computed(() => {
   if ($view.value == View.HISTORY) return t("trx_history");
-  else if ($view.value == View.FORM && dto.POS_ID <= 0) return t("new");
+  else if ($view.value == View.FORM && dto.UR_ID <= 0) return t("new");
   else if ($view.value == View.FORM && $disable.value == true) return t("view");
   else if ($view.value == View.FORM && $disable.value == false)
     return t("edit");
@@ -160,16 +140,19 @@ const datahistory = ref([]);
 const isSaving = ref(false);
 
 const clearData = () => {
-  dto.ROL_ID = -1;
+  dto.UR_ID = -1;
   dto.ROL_NO = 0;
   dto.ROL_CODE = "";
   dto.ROL_NAME_KH = "";
   dto.ROL_NAME_EN = "";
   dto.ROL_LEVEL = 0;
+  dto.US_ID = -1;
+  dto.ROL_ID =-1
 };
-
+const USER = ref(null);
+const ROLE =ref(null);
 const viewData = () => {
-  $api.post("/api/role/viewdata", dto, (data) => {
+  $api.post("/api/userasign/viewdata", dto, (data) => {
     datalist.value = data;
   });
 };
@@ -198,10 +181,12 @@ const newData = () => {
 };
 
 const saveData = () => {
-  if (!verifyData()) return;
+  // if (!verifyData()) return;
+  dto.US_ID = USER.value?.US_ID;
+  dto.ROL_ID = ROLE.value?.ROL_ID;
   $msg.confirm(t("confirm_save"), () => {
     $api.post(
-      "/api/role/save",
+      "/api/userasign/save",
       dto,
       (data) => {
         $msg.success(t("success_save"), () => {
@@ -229,7 +214,7 @@ const detailData = (x) => {
   $disable.value = true;
   dto.ROL_ID = x.ROL_ID;
   $api.post(
-    "/api/role/getdata",
+    "/api/userasign/getdata",
     dto,
     (data) => {
      

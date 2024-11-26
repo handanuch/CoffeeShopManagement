@@ -11,6 +11,7 @@ import Item from "@/pages/Item.vue";
 import Unit from "@/pages/Unit.vue";
 import User from "@/pages/User.vue";
 import Employee from "@/pages/Employee.vue";
+import UserAsign from "@/pages/UserAsign.vue";
 
 
 const routes = {
@@ -26,7 +27,9 @@ const routes = {
   Item: Item,
   Unit: Unit,
   User: User,
+  UserAsign: UserAsign,
   Employee: Employee,
+ 
 };
 
 export default routes;
