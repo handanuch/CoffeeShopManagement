@@ -120,7 +120,7 @@
                     <div class="d-flex">
                       <div class="flex-grow-1">
                         <p class="text-muted fw-medium">Revenue</p>
-                        <h4 class="mb-0">$35, 723</h4>
+                        <h4 class="mb-0">$3, 723</h4>
                       </div>
   
                       <div class="flex-shrink-0 align-self-center">
@@ -233,7 +233,7 @@
                         </td>
                         <td>Ice Late</td>
                         <td>01 Mar, 2024</td>
-                        <td>$10</td>
+                        <td>$2</td>
                         
                         <td>
                           <!-- Button trigger modal -->
@@ -269,7 +269,7 @@
                         </td>
                         <td>Ice Late</td>
                         <td>01 Mar, 2024</td>
-                        <td>$10</td>
+                        <td>$2</td>
                         
                         <td>
                           <!-- Button trigger modal -->
@@ -305,7 +305,7 @@
                         </td>
                         <td>Ice Late</td>
                         <td>01 Mar, 2024</td>
-                        <td>$10</td>
+                        <td>$2</td>
                         
                         <td>
                           <!-- Button trigger modal -->
@@ -340,7 +340,7 @@
                         </td>
                         <td>Ice Late</td>
                         <td>01 Mar, 2024</td>
-                        <td>$10</td>
+                        <td>$2</td>
                         
                         <td>
                           <!-- Button trigger modal -->
@@ -375,7 +375,7 @@
                         </td>
                         <td>Ice Late</td>
                         <td>01 Mar, 2024</td>
-                        <td>$10</td>
+                        <td>$2</td>
                         
                         <td>
                           <!-- Button trigger modal -->
@@ -410,7 +410,7 @@
                         </td>
                         <td>Ice Late</td>
                         <td>01 Mar, 2024</td>
-                        <td>$10</td>
+                        <td>$2</td>
                         
                         <td>
                           <!-- Button trigger modal -->
@@ -462,8 +462,8 @@
                             ></label>
                           </div>
                         </th>
-                        <th class="align-middle">Order ID</th>
-                        <th class="align-middle">Billing Name</th>
+                        <th class="align-middle">Invoice Id</th>
+                        <th class="align-middle">Item name</th>
                         <th class="align-middle">Date</th>
                         <th class="align-middle">Total</th>
                         <th class="align-middle">Payment Status</th>
@@ -488,12 +488,12 @@
                         </td>
                         <td>
                           <a href="javascript: void(0);" class="text-body fw-bold"
-                            >#SK2540</a
+                            >00001</a
                           >
                         </td>
-                        <td>Neal Matthews</td>
-                        <td>07 Oct, 2019</td>
-                        <td>$400</td>
+                        <td>Ice Late</td>
+                        <td>07 Oct, 2024</td>
+                        <td>$2</td>
                         <td>
                           <span
                             class="badge badge-pill badge-soft-success font-size-11"
@@ -532,12 +532,12 @@
                         </td>
                         <td>
                           <a href="javascript: void(0);" class="text-body fw-bold"
-                            >#SK2541</a
+                            >00002</a
                           >
                         </td>
-                        <td>Jamal Burnett</td>
-                        <td>07 Oct, 2019</td>
-                        <td>$380</td>
+                        <td>Hot Late</td>
+                        <td>07 Oct, 2024</td>
+                        <td>$2</td>
                         <td>
                           <span
                             class="badge badge-pill badge-soft-danger font-size-11"
@@ -574,12 +574,12 @@
                         </td>
                         <td>
                           <a href="javascript: void(0);" class="text-body fw-bold"
-                            >#SK2542</a
+                            >00003</a
                           >
                         </td>
-                        <td>Juan Mitchell</td>
-                        <td>06 Oct, 2019</td>
-                        <td>$384</td>
+                        <td>Ice Late</td>
+                        <td>06 Oct, 2024</td>
+                        <td>$2</td>
                         <td>
                           <span
                             class="badge badge-pill badge-soft-success font-size-11"
@@ -615,12 +615,12 @@
                         </td>
                         <td>
                           <a href="javascript: void(0);" class="text-body fw-bold"
-                            >#SK2543</a
+                            >00004</a
                           >
                         </td>
-                        <td>Barry Dick</td>
-                        <td>05 Oct, 2019</td>
-                        <td>$412</td>
+                        <td>Ice Late</td>
+                        <td>05 Oct, 2024</td>
+                        <td>$2</td>
                         <td>
                           <span
                             class="badge badge-pill badge-soft-success font-size-11"
@@ -658,12 +658,12 @@
                         </td>
                         <td>
                           <a href="javascript: void(0);" class="text-body fw-bold"
-                            >#SK2544</a
+                            >00005</a
                           >
                         </td>
-                        <td>Ronald Taylor</td>
-                        <td>04 Oct, 2019</td>
-                        <td>$404</td>
+                        <td>Ice Late</td>
+                        <td>04 Oct, 2024</td>
+                        <td>$2</td>
                         <td>
                           <span
                             class="badge badge-pill badge-soft-warning font-size-11"
