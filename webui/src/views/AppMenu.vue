@@ -13,7 +13,7 @@
               </span>
             </a>
           </li>
-        </ul> 
+        </ul>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@ const menu = ref([]);
 
 const loadMenu = () => {
   menu.value = [
-  {
+    {
       PMS_CODE: "wfmDashboard",
       PMS_NAME_ENG: "Dashboard",
       PMS_NAME_LOCAL: "Dashboard",
@@ -130,7 +130,13 @@ const loadMenu = () => {
       PMS_FORM_NAME: "Report",
       IMG: "bx bx-notepad",
     },
-    
+    {
+      PMS_CODE: "wfmReport",
+      PMS_NAME_ENG: "Product",
+      PMS_NAME_LOCAL: "ផលិតផល",
+      PMS_FORM_NAME: "Product",
+      IMG: "bx bx-box",
+    },
   ];
   new MetisMenu("#side-menu");
 };
