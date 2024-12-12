@@ -1,6 +1,6 @@
 <template>
   <WideDiv>
-    <h5>{{ t("employee") }}</h5>
+    <h5>{{ t("product") }}</h5>
     <div v-show="$view == View.DATA">
       <div class="row mb-2">
         <div class="col-sm-4">
@@ -37,25 +37,24 @@
             <thead class="table-light">
               <tr>
                 <th>{{ t("s_no") }}</th>
-                <th>{{ t("emp_name_kh") }}</th>
-                <th>{{ t("emp_name_en") }}</th>
-                <th>{{ t("gender") }}</th>
-                <th>{{ t("phone") }}</th>
-                <th>{{ t("status") }}</th>
-                <th>{{ t("start_date") }}</th>
-
+                <th>{{ t("pro_name_kh") }}</th>
+                <th>{{ t("pro_name_en") }}</th>
+                <th>{{ t("pro_price") }}</th>
+                <th>{{ t("pro_sts") }}</th>
+                <th>{{ t("create_date") }}</th>
+                <th>{{ t("modify_date") }}</th>
                 <th style="text-align: center">{{ t("action") }}</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(x, i) in datalist" :key="x.EMP_ID">
+              <tr v-for="(x, i) in datalist" :key="x.PRO_ID">
                 <td>{{ i + 1 }}</td>
-                <th>{{ x.NAME_KH }}</th>
-                <td>{{ x.NAME_EN }}</td>
-                <td>{{ x.GENDER }}</td>
-                <td>{{ x.PHONE }}</td>
-                <td>{{ x.EMP_STS }}</td>
-                <td>{{ x.START_DATE }}</td>
+                <th>{{ x.PRO_NAME_KH }}</th>
+                <td>{{ x.PRO_NAME_EN }}</td>
+                <td>{{ x.PRO_PRICE }}</td>
+                <td>{{ x.PRO_STS }}</td>
+                <td>{{ $date.format(x.CREATION_DATE, "DD MMM YYYY") }}</td>
+                <td>{{ $date.format(x.MODIFY_DATE, "DD MMM YYYY") }}</td>
                 <td style="text-align: center">
                   <a
                     @click="detailData(x)"
@@ -75,75 +74,51 @@
     <div v-show="$view == View.FORM">
       <div class="row">
         <div class="table-scroll">
-          <VInput :label="t('emp_code')" :rq="true">
+          <VInput :label="t('pro_code')" :rq="true">
             <input
-              v-model="dto.EMP_CODE"
+              v-model="dto.PRO_CODE"
               type="text"
               class="form-control"
               :disabled="$disable"
             />
           </VInput>
-          <VInput :label="t('name_kh')" :rq="true">
+          <VInput :label="t('pro_name_kh')" :rq="true">
             <input
-              v-model="dto.NAME_KH"
+              v-model="dto.PRO_NAME_KH"
               type="text"
               class="form-control"
               :disabled="$disable"
             />
           </VInput>
 
-          <VInput :label="t('name_en')">
+          <VInput :label="t('pro_name_en')">
             <input
-              v-model="dto.NAME_EN"
+              v-model="dto.PRO_NAME_EN"
               type="text"
               class="form-control"
               :disabled="$disable"
             />
           </VInput>
-          <VInput :label="t('gender')">
+          <VInput :label="t('pro_price')">
             <input
-              v-model="dto.GENDER"
+              v-model="dto.PRO_PRICE"
               type="text"
               class="form-control"
               :disabled="$disable"
             />
           </VInput>
-          <VInput :label="t('phone')">
-            <input
-              v-model="dto.PHONE"
-              type="text"
-              class="form-control"
-              :disabled="$disable"
-            />
-          </VInput>
-          <VInput :label="t('status')">
+          <!-- <VInput :label="t('status')">
             <input
               v-model="dto.EMP_STS"
               type="text"
               class="form-control"
               :disabled="$disable"
             />
-          </VInput>
-          <VInput :label="t('start_date')">
+          </VInput> -->
+          <VInput :label="t('create_date')">
             <input
-              v-model="dto.START_DATE"
+              v-model="dto.CREATION_DATE"
               type="date"
-              class="form-control"
-              :disabled="$disable"
-            />
-          </VInput>
-          <VInput :label="t('department')">
-            <input
-              v-model="dto.DEP_ID"
-              type="number"
-              class="form-control"
-              :disabled="$disable"
-            />
-          </VInput>
-          <VInput :label="t('position')">
-            <input
-              v-model="dto.POS_ID"
-              type="number"
               class="form-control"
               :disabled="$disable"
             />
@@ -192,19 +167,15 @@ const { t } = useI18n({ messages: lang });
 const $tab = useTabStore();
 
 const dto = reactive({
-  COM_ID: 1,
+  PRO_ID: 1,
   EMP_ID: -1,
-  EMP_CODE: "",
-  NAME_EN: "",
-  NAME_KH: "",
-  PHONE: "",
-  DEP_ID: 1,
-  POS_ID: 1,
-  STAT_DATE: new Date(),
-  EMP_STS: "ACTIVE",
-  MOBILE: "",
-  GENDER: "",
-
+  PRO_CODE: "",
+  PRO_NAME_KH: "",
+  PRO_NAME_EN: "",
+  PRO_PRICE: "",
+  PRO_STS: "ACTIVE",
+  CREATION_DATE: new Date(),
+  MODIFY_DATE: new Date(),
   TR_US: 1,
 });
 
@@ -219,7 +190,7 @@ const newData = () => {
 };
 
 const viewData = () => {
-  $api.post("/api/employee/viewdata", dto, (data) => {
+  $api.post("/api/product/viewdata", dto, (data) => {
     datalist.value = data;
     console.log(data);
   });
@@ -228,18 +199,16 @@ const detailData = (x) => {
   $view.value = View.FORM;
   $disable.value = true;
   dto.EMP_ID = x.EMP_ID;
-  $api.post("/api/employee/getdata", dto, (data) => {
-    dto.EMP_IDE = data.EMP_IDE;
-    dto.COM_ID = data.COM_ID;
-    dto.EMP_CODE = data.EMP_CODE;
-    dto.NAME_EN = data.NAME_EN;
-    dto.NAME_KH = data.NAME_KH;
-    dto.EMP_STS = data.EMP_STS;
-    dto.PHONE = data.PHONE;
-    dto.GENDER = data.GENDER;
-    dto.STAT_DATE = data.STAT_DATE;
-    dto.DEP_ID = data.DEP_ID;
-    dto.POS_ID = data.POS_ID;
+  $api.post("/api/product/getdata", dto, (data) => {
+    dto.PRO_ID = data.PRO_ID;
+    dto.PRO_CODE = data.PRO_CODE;
+    dto.PRO_NAME_KH = data.PRO_NAME_KH;
+    dto.PRO_NAME_EN = data.PRO_NAME_EN;
+    dto.PRO_PRICE = data.PRO_PRICE;
+    dto.TR_US = getNumber(data.TR_US);
+    dto.PRO_STS = data.PRO_STS;
+    dto.CREATION_DATE = data.CREATION_DATE;
+    dto.MODIFY_DATE = data.MODIFY_DATE;
   });
 };
 const editClick = () => {
@@ -248,7 +217,7 @@ const editClick = () => {
 const saveData = () => {
   $msg.confirm(t("confirm_save"), () => {
     $api.post(
-      "/api/employee/save",
+      "/api/product/save",
       dto,
       (data) => {
         $msg.success(t("success_save"), () => {
